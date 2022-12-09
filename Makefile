@@ -7,7 +7,7 @@
 
 HEADERS 	=	push_swap.h
 
-SRCSFILE		=	push_swap.c
+SRCSFILE		=	push_swap.c check_error.c
 
 LIBFTSRC	=	libftprintf.a libft.a
 
@@ -19,7 +19,7 @@ SRCSDIR		=	./src/
 
 LIBFTDIR	=	libft/
 
-OBJSDIR		=	./.objs/
+OBJSDIR		=	./objs/
 
 #					Full Path
 

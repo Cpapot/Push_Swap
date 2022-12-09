@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstintnew.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/09 19:03:10 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/09 22:39:31 by cpapot           ###   ########.fr       */
+/*   Created: 2022/11/12 12:05:01 by cpapot            #+#    #+#             */
+/*   Updated: 2022/12/09 21:07:51 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
+#include "../../includes/libft.h"
 
-# define PUSH_SWAP_H
+t_int_list	*ft_lstintnew(int content)
+{
+	t_int_list	*node;
 
-# include <stdlib.h>
-# include "../libft/includes/libft.h"
-
-/*					check_error					*/
-void	print_error(t_int_list *list);
-int		check_args(int argc, char **argv);
-int		check_duplicate(t_int_list *list);
-
-#endif
+	node = malloc(sizeof(t_list));
+	if (node == NULL)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
+}

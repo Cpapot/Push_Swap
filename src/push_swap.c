@@ -6,52 +6,52 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:04:56 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/09 19:41:26 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/09 22:39:55 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	check_args(int argc, char **argv)
+t_int_list	*read_args(int argc, char **argv)
 {
-	int	i;
-	int	u;
+	t_int_list	*start;
+	t_int_list	*node;
+	int			i;
 
-	i = 1;
-	if (argc <= 1)
-		return (0);
-	while (i != argc)
+	i = 2;
+	start = ft_lstintnew(ft_atoi(argv[1]));
+	while (i < argc)
 	{
-		u = 0;
-		while (argv[i][u])
+		node = ft_lstintnew(ft_atoi(argv[i]));
+		ft_lstintadd_back(&start, node);
+		if (node == NULL)
 		{
-			if (!ft_isdigit(argv[i][u]))
-				return (0);
-			u++;
+			ft_lstintclear(&start);
+			return (NULL);
 		}
 		i++;
 	}
-	return (1);
+	return (start);
 }
-/*
-t_list	read_args(int argc, char **argv)
+
+int	printest(int a)
 {
-	int	i;
+	int	b;
 
-	i = 0;
-
-}*/
-
-void	print_error(void)
-{
-	ft_printf("Error\n");
-	exit (0);
+	b = a;
+	ft_printf("%d\n", b);
+	return (a);
 }
 
 int	main(int argc, char **argv)
 {
+	t_int_list	*intlist_a;
 
 	if (!check_args(argc, argv))
-		print_error();
-	ft_printf("ok");
+		print_error(NULL);
+	intlist_a = read_args(argc, argv);
+	if (!check_duplicate(intlist_a))
+		print_error(intlist_a);
+	ft_lstintiter(intlist_a, (*printest));
+	ft_lstintclear(&intlist_a);
 }

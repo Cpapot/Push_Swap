@@ -36,6 +36,12 @@ LSTSRC		=	ft_lstnew.c ft_lstadd_front.c \
 				ft_lstiter.c ft_lstclear.c \
 				ft_lstmap.c
 
+INTLSTSRC	=	ft_lstintnew.c ft_lstintadd_front.c \
+				ft_lstintadd_back.c ft_lstintsize.c \
+				ft_lstintlast.c ft_lstintdelone.c \
+				ft_lstintiter.c ft_lstintclear.c \
+				ft_lstintmap.c
+
 #					Directories
 
 HEADERSDIR	=	includes/
@@ -52,6 +58,8 @@ WRITEDIR	=	write/
 
 LSTDIR		=	lst/
 
+LSTINTDIR	=	lst_int/
+
 PRINTFDIR	=	ft_printf/
 
 #					Full Path
@@ -60,7 +68,8 @@ SRCS		=	$(addprefix $(SRCSDIR)$(CHARDIR),$(CHARSRC)) \
 				$(addprefix $(SRCSDIR)$(STRINGDIR),$(STRINGSRC)) \
 				$(addprefix $(SRCSDIR)$(MEMDIR),$(MEMSRC)) \
 				$(addprefix $(SRCSDIR)$(WRITEDIR),$(WRITESRC)) \
-				$(addprefix $(SRCSDIR)$(LSTDIR),$(LSTSRC))
+				$(addprefix $(SRCSDIR)$(LSTDIR),$(LSTSRC)) \
+				$(addprefix $(SRCSDIR)$(LSTINTDIR),$(INTLSTSRC)) \
 
 PRINTF		=	$(addprefix $(SRCSDIR),$(PRINTFDIR))
 
@@ -79,7 +88,7 @@ AR			=	ar rcs
 
 NAME		=	libft.a
 
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -g3
 
 CC			=	gcc
 
