@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:20:49 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/09 21:43:26 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/10 18:31:46 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 typedef struct s_intlist
 {
-	int					content;
+	int					cont;
 	struct s_intlist	*next;
 }					t_int_list;
 
@@ -48,7 +48,7 @@ void		ft_lstintdelone(t_int_list *lst);
 void		ft_lstintiter(t_int_list *lst, int (*f)(int));
 t_int_list	*ft_lstintlast(t_int_list *lst);
 t_int_list	*ft_lstintmap(t_int_list *lst, int (*f)(int));
-t_int_list	*ft_lstintnew(int content);
+t_int_list	*ft_lstintnew(int cont);
 int			ft_lstintsize(t_int_list *lst);
 void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		*ft_calloc(size_t count, size_t size);

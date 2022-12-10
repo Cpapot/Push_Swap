@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:10:05 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/09 21:43:45 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/10 18:31:33 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstintiter(t_int_list *lst, int (*f)(int))
 		return ;
 	while (lst != NULL)
 	{
-		f(lst->content);
+		f(lst->cont);
 		lst = lst->next;
 	}
 }

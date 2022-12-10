@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:04:56 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/09 22:39:55 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/10 17:50:39 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,17 @@ t_int_list	*read_args(int argc, char **argv)
 	return (start);
 }
 
-int	printest(int a)
-{
-	int	b;
-
-	b = a;
-	ft_printf("%d\n", b);
-	return (a);
-}
-
 int	main(int argc, char **argv)
 {
 	t_int_list	*intlist_a;
 
 	if (!check_args(argc, argv))
 		print_error(NULL);
+	if (argc <= 1)
+		return (0);
 	intlist_a = read_args(argc, argv);
 	if (!check_duplicate(intlist_a))
 		print_error(intlist_a);
-	ft_lstintiter(intlist_a, (*printest));
+	call_sorter(intlist_a);
 	ft_lstintclear(&intlist_a);
 }

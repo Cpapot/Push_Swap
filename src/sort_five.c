@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstintdelone.c                                  :+:      :+:    :+:   */
+/*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 14:46:38 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/10 18:32:25 by cpapot           ###   ########.fr       */
+/*   Created: 2022/12/10 18:05:01 by cpapot            #+#    #+#             */
+/*   Updated: 2022/12/10 18:18:07 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
-
-void	ft_lstintdelone(t_int_list *lst)
+#include "../inc/push_swap.h"
+/*
+void	sort_five_nbr(t_int_list *list_a)
 {
-	if (lst)
-	{
-		lst->cont = 0;
-		free(lst);
-	}
-	return ;
+
 }
+*/

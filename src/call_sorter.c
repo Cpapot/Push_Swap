@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstintdelone.c                                  :+:      :+:    :+:   */
+/*   call_sorter.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 14:46:38 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/10 18:32:25 by cpapot           ###   ########.fr       */
+/*   Created: 2022/12/10 15:43:48 by cpapot            #+#    #+#             */
+/*   Updated: 2022/12/10 18:18:28 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../inc/push_swap.h"
 
-void	ft_lstintdelone(t_int_list *lst)
+void	call_sorter(t_int_list *list_a)
 {
-	if (lst)
-	{
-		lst->cont = 0;
-		free(lst);
-	}
-	return ;
+	int	len;
+
+	len = ft_lstintsize(list_a);
+	if (len <= 3)
+		sort_three_nbr(list_a);
+	/*else if (len <= 5)
+		sort_five_nbr(list_a);*/
 }

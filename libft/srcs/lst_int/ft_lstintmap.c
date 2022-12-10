@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:54:56 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/09 21:43:11 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/10 18:31:36 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ t_int_list	*ft_lstintmap(t_int_list *lst, int (*f)(int))
 
 	if (lst == NULL || f == NULL)
 		return (NULL);
-	start = ft_lstintnew(f(lst->content));
+	start = ft_lstintnew(f(lst->cont));
 	lst = lst->next;
 	while (lst)
 	{
-		new = ft_lstintnew(f(lst->content));
+		new = ft_lstintnew(f(lst->cont));
 		if (new == NULL)
 		{
 			ft_lstintclear(&start);

@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstintdelone.c                                  :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 14:46:38 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/10 18:32:25 by cpapot           ###   ########.fr       */
+/*   Created: 2022/12/10 15:43:56 by cpapot            #+#    #+#             */
+/*   Updated: 2022/12/10 18:33:36 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../inc/push_swap.h"
 
-void	ft_lstintdelone(t_int_list *lst)
+void	sort_three_nbr(t_int_list *list_a)
 {
-	if (lst)
-	{
-		lst->cont = 0;
-		free(lst);
-	}
-	return ;
+	if (list_a->cont > list_a->next->cont && \
+		list_a->next->cont > list_a->next->next->cont)
+		ft_printf("sa\n");
+	if (list_a->cont > list_a->next->cont)
+		ft_printf("sa\n");
+	else if (list_a->cont > list_a->next->next->cont)
+		ft_printf("rra\n");
+	else if (list_a->next->cont > list_a->next->next->cont)
+		ft_printf("sa\nra\n");
 }
