@@ -8,7 +8,8 @@
 HEADERS 	=	push_swap.h
 
 SRCSFILE		=	push_swap.c check_error.c \
-					call_sorter.c sort_three.c
+					call_sorter.c sort_three.c \
+					swap.c push.c rotate.c
 
 LIBFTSRC	=	libftprintf.a libft.a
 
