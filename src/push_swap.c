@@ -6,11 +6,22 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:04:56 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/10 23:39:53 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/11 17:22:05 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+
+int	is_sorted(t_int_list *list)
+{
+	while (list->next)
+	{
+		if (list->cont > list->next->cont)
+			return (0);
+		list = list->next;
+	}
+	return (1);
+}
 
 t_int_list	*read_args(int argc, char **argv)
 {

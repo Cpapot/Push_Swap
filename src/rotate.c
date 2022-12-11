@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 23:35:16 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/11 00:07:21 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/11 17:11:27 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,60 +14,69 @@
 
 void	ra(t_int_list **list_a)
 {
+	t_int_list	*list;
 	int			tmp;
-	t_int_list	*lista;
+	int			tmp2;
 
-	lista = *list_a;
-	tmp = lista->cont;
-	while (lista->next)
+	list = *list_a;
+	while (list)
 	{
-		lista->cont = lista->next->cont;
-		lista = lista->next;
+		tmp2 = list->cont;
+		list->cont = tmp;
+		tmp = tmp2;
+		list = list->next;
 	}
-	lista->cont = tmp;
+	list = *list_a;
+	list->cont = tmp;
 	ft_printf("ra\n");
 	return ;
 }
 
 void	rb(t_int_list **list_b)
 {
+	t_int_list	*list;
 	int			tmp;
-	t_int_list	*listb;
+	int			tmp2;
 
-	listb = *list_b;
-	tmp = listb->cont;
-	while (listb->next)
+	list = *list_b;
+	while (list)
 	{
-		listb->cont = listb->next->cont;
-		listb = listb->next;
+		tmp2 = list->cont;
+		list->cont = tmp;
+		tmp = tmp2;
+		list = list->next;
 	}
-	listb->cont = tmp;
-	ft_printf("rb");
+	list = *list_b;
+	list->cont = tmp;
+	ft_printf("rn\n");
 	return ;
 }
 
 void	rr(t_int_list **list_a, t_int_list **list_b)
 {
+	t_int_list	*list;
 	int			tmp;
-	t_int_list	*lista;
-	t_int_list	*listb;
+	int			tmp2;
 
-	lista = *list_a;
-	tmp = lista->cont;
-	while (lista->next)
+	list = *list_a;
+	while (list)
 	{
-		lista->cont = lista->next->cont;
-		lista = lista->next;
+		tmp2 = list->cont;
+		list->cont = tmp;
+		tmp = tmp2;
+		list = list->next;
 	}
-	lista->cont = tmp;
-	listb = *list_b;
-	tmp = listb->cont;
-	while (listb->next)
+	list = *list_a;
+	list->cont = tmp;
+	list = *list_b;
+	while (list)
 	{
-		listb->cont = listb->next->cont;
-		listb = listb->next;
+		tmp2 = list->cont;
+		list->cont = tmp;
+		tmp = tmp2;
+		list = list->next;
 	}
-	listb->cont = tmp;
+	list = *list_b;
+	list->cont = tmp;
 	ft_printf("rr\n");
-	return ;
 }
