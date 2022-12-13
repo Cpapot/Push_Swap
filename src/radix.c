@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:23:58 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/13 17:12:42 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/14 00:53:54 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,38 @@ static int	ft_convert_bin(unsigned int nbr)
 	return (size);
 }
 
+void	add_binary(t_int_list **list_a)
+{
+	t_int_list	*list;
+	int			i;
+	int			tmp;
+
+	i = 1;
+	list = *list_a;
+	while (i - 1 != ft_lstintsize(list))
+	{
+		tmp = INT_MAX;
+		while (list)
+		{
+			if (list->cont <= tmp && list->nb == 0)
+				tmp = list->cont;
+			list = list->next;
+		}
+		list = *list_a;
+		while (list->cont != tmp)
+			list = list->next;
+		list->nb = ft_convert_bin(i);
+		ft_printf("\n%d: %d", list->cont, list->nb);
+		i++;
+		list = *list_a;
+	}
+}
+
 void	radix(t_int_list **list_a)
 {
-	t_int_list	*list_b;
-	int			i;
-
-	list_b = NULL;
-	i = 1;
-	while (i - 1 =! )
-
+	add_binary(list_a);
+	while (is_sorted(&list_a))
+	{
+	
+	}
 }

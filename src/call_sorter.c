@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 15:43:48 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/13 16:39:04 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/13 21:33:50 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ void	call_sorter(t_int_list **list_a)
 		sort_three_nbr(&list);
 	else if (len == 5)
 		sort_five_nbr(&list);
-	test();
+	else
+		radix(list_a);
 }

@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:03:10 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/13 16:58:53 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/14 00:43:01 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 # include <stdlib.h>
 # include "../libft/includes/libft.h"
+
+# define INT_MAX	2147483647
 
 /*					push_swap					*/
 int		is_sorted(t_int_list *list);
@@ -52,5 +54,9 @@ void	rr(t_int_list **list_a, t_int_list **list_b);
 void	rrb(t_int_list **list_b);
 void	rra(t_int_list **list_a);
 void	rrr(t_int_list **list_a, t_int_list **list_b);
+
+/*					radix						*/
+void	radix(t_int_list **list_a);
+
 
 #endif
