@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 21:34:01 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/13 01:03:41 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/13 12:47:46 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	pb(t_int_list **list_a, t_int_list **list_b)
 	{
 		listb = ft_lstintnew(lista->cont);
 		*list_a = lista->next;
-		//ft_lstintdelone(lista);
+		ft_lstintdelone(lista);
 	}
-	else
+	else if (lista)
 	{
 		new = ft_lstintnew(lista->cont);
 		*list_a = lista->next;
@@ -45,13 +45,13 @@ void	pa(t_int_list **list_a, t_int_list **list_b)
 
 	lista = *list_a;
 	listb = *list_b;
-	if (lista == NULL)
+	if (lista == NULL )
 	{
 		lista = ft_lstintnew(listb->cont);
 		*list_b = listb->next;
 		//ft_lstintdelone(listb);
 	}
-	else
+	else if (listb)
 	{
 		new = ft_lstintnew(listb->cont);
 		*list_b = listb->next;

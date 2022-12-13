@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 23:35:16 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/12 23:44:09 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/13 12:26:51 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,21 @@
 void	reverse_rotate(t_int_list	**list)
 {
 	t_int_list	*listtmp;
+	t_int_list	*start;
 	int			tmp;
 	int			tmp2;
 
 	tmp = 0;
+	start = *list;
 	listtmp = *list;
-	while (list)
+	while (listtmp)
 	{
 		tmp2 = listtmp->cont;
 		listtmp->cont = tmp;
 		tmp = tmp2;
 		listtmp = listtmp->next;
 	}
-	listtmp = *list;
-	listtmp->cont = tmp;
+	start->cont = tmp;
 }
 
 void	rra(t_int_list **list_a)

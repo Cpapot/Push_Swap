@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 18:05:01 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/13 01:14:34 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/13 12:48:49 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	push_smallest(t_int_list **list_a, t_int_list **list_b)
 	{
 		while (i != ft_lstintsize(*list_a) - smallest)
 		{
-			//rra crash
 			rra(list_a);
 			i++;
 		}
@@ -70,4 +69,8 @@ void	sort_five_nbr(t_int_list *list_a)
 	list_b = NULL;
 	push_smallest(&list_a, &list_b);
 	push_smallest(&list_a, &list_b);
+	sort_three_nbr(&list_a);
+	pa(&list_a, &list_b);
+	pa(&list_a, &list_b);
+	ft_lstintclear(&list_b);
 }
