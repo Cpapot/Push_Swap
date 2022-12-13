@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:03:10 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/11 17:11:58 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/13 00:39:11 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 
 # include <stdlib.h>
 # include "../libft/includes/libft.h"
+
+/*					push_swap					*/
+int		is_sorted(t_int_list *list);
 
 /*					check_error					*/
 void	print_error(t_int_list *list);

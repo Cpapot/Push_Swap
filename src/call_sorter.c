@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 15:43:48 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/11 17:23:07 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/13 00:39:39 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	call_sorter(t_int_list *list_a)
 	int	len;
 
 	len = ft_lstintsize(list_a);
-	if (len == 3)
+	if (is_sorted(list_a))
+		return ;
+	else if (len == 3)
 		sort_three_nbr(list_a);
 	else if (len == 5)
 		sort_five_nbr(list_a);
