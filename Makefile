@@ -10,7 +10,8 @@ HEADERS 	=	push_swap.h
 SRCSFILE		=	push_swap.c check_error.c \
 					call_sorter.c sort_three.c \
 					swap.c push.c rotate.c \
-					reverse_rotate.c sort_five.c
+					reverse_rotate.c sort_five.c \
+					radix.c
 
 LIBFTSRC	=	libftprintf.a libft.a
 
@@ -45,7 +46,7 @@ AR			=	ar rc
 
 NAME		=	push_swap
 
-CFLAGS		=	-Wall -Wextra -Werror -g
+CFLAGS		=	-Wall -Wextra -Werror -g3
 
 CC			=	gcc
 

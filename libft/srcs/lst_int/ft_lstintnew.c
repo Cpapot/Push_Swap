@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 12:05:01 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/10 18:31:37 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/13 16:26:47 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_int_list	*ft_lstintnew(int cont)
 	if (node == NULL)
 		return (NULL);
 	node->cont = cont;
+	node->nb = 0;
 	node->next = NULL;
 	return (node);
 }

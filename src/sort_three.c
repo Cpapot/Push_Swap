@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 15:43:56 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/13 12:42:28 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/13 13:38:59 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,11 @@ void	sort_three_nbr(t_int_list **list)
 	{
 		sa(&list_a);
 		ra(&list_a);
+	}
+	if (list_a->next->cont > list_a->next->next->cont)
+	{
+		ra(&list_a);
+		sa(&list_a);
+		rra(&list_a);
 	}
 }

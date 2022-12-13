@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:20:49 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/10 18:31:46 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/13 16:26:06 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 typedef struct s_intlist
 {
+	int					nb;
 	int					cont;
 	struct s_intlist	*next;
 }					t_int_list;

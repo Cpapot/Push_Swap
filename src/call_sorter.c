@@ -6,21 +6,24 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 15:43:48 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/13 12:41:01 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/13 16:39:04 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	call_sorter(t_int_list *list_a)
+void	call_sorter(t_int_list **list_a)
 {
-	int	len;
+	int			len;
+	t_int_list	*list;
 
-	len = ft_lstintsize(list_a);
-	if (is_sorted(list_a))
+	list = *list_a;
+	len = ft_lstintsize(list);
+	if (is_sorted(list))
 		return ;
 	else if (len == 3)
-		sort_three_nbr(&list_a);
+		sort_three_nbr(&list);
 	else if (len == 5)
-		sort_five_nbr(list_a);
+		sort_five_nbr(&list);
+	test();
 }
