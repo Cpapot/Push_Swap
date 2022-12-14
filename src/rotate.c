@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 13:41:41 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/12 23:43:48 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/14 14:02:06 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,20 @@
 
 void	rotate(t_int_list **list)
 {
-	int			tmp;
+	t_int_list	tmp;
 	t_int_list	*lista;
 
-	tmp = 0;
 	lista = *list;
-	tmp = lista->cont;
+	tmp.cont = lista->cont;
+	tmp.nb = lista->nb;
 	while (lista->next)
 	{
 		lista->cont = lista->next->cont;
+		lista->nb = lista->next->nb;
 		lista = lista->next;
 	}
-	lista->cont = tmp;
+	lista->cont = tmp.cont;
+	lista->nb = tmp.nb;
 	return ;
 }
 

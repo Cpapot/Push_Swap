@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:23:58 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/14 00:53:54 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/14 14:46:42 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,29 @@ void	add_binary(t_int_list **list_a)
 
 void	radix(t_int_list **list_a)
 {
+	int			divide_bin;
+	t_int_list	*lista;
+	int			i;
+	int			u;
+	t_int_list	*listb;
+
 	add_binary(list_a);
-	while (is_sorted(&list_a))
+	lista = *list_a;
+	i = 0;
+	u = 0;
+	listb = NULL;
+	divide_bin = 2;
+	while (i != 3)
 	{
-	
+		while (u != ft_lstintsize(lista))
+		{
+			if ((lista->nb % divide_bin) >= (divide_bin / 2))
+				pb(&lista, &listb);
+			ra(&lista);
+		}
+		while (listb)
+			pa(&lista, &listb);
+		i++;
+		divide_bin *= 10;
 	}
 }
