@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:23:58 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/14 14:46:42 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/14 19:39:19 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,24 @@ void	add_binary(t_int_list **list_a)
 		while (list->cont != tmp)
 			list = list->next;
 		list->nb = ft_convert_bin(i);
-		ft_printf("\n%d: %d", list->cont, list->nb);
 		i++;
 		list = *list_a;
+	}
+}
+
+void	push_bin(t_int_list **list_a, t_int_list **list_b, int llen, int div)
+{
+	int			u;
+	t_int_list	*lista;
+
+	u = 0;
+	lista = *list_a;
+	while (u != llen)
+	{
+		if ((lista->nb % div) >= (div / 2))
+			pb(&lista, list_b);
+		ra(&lista);
+		u++;
 	}
 }
 
@@ -86,27 +101,19 @@ void	radix(t_int_list **list_a)
 {
 	int			divide_bin;
 	t_int_list	*lista;
-	int			i;
-	int			u;
 	t_int_list	*listb;
+	int			size;
 
 	add_binary(list_a);
 	lista = *list_a;
-	i = 0;
-	u = 0;
+	size = ft_lstintsize(lista);
 	listb = NULL;
 	divide_bin = 2;
-	while (i != 3)
+	while (!is_sorted(lista))
 	{
-		while (u != ft_lstintsize(lista))
-		{
-			if ((lista->nb % divide_bin) >= (divide_bin / 2))
-				pb(&lista, &listb);
-			ra(&lista);
-		}
+		push_bin(&lista, &listb, size, divide_bin);
 		while (listb)
 			pa(&lista, &listb);
-		i++;
 		divide_bin *= 10;
 	}
 }
