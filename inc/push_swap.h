@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:03:10 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/14 00:43:01 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/16 12:30:10 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ void	rrr(t_int_list **list_a, t_int_list **list_b);
 /*					radix						*/
 void	radix(t_int_list **list_a);
 
+void	test(t_int_list	*list);
 
 #endif

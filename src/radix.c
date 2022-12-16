@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:23:58 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/14 19:39:19 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/16 16:37:06 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,18 +81,17 @@ void	add_binary(t_int_list **list_a)
 	}
 }
 
+//erreur push bin
 void	push_bin(t_int_list **list_a, t_int_list **list_b, int llen, int div)
 {
 	int			u;
-	t_int_list	*lista;
 
 	u = 0;
-	lista = *list_a;
-	while (u != llen)
+	while (u != llen && (*list_a)->next != NULL)
 	{
-		if ((lista->nb % div) >= (div / 2))
-			pb(&lista, list_b);
-		ra(&lista);
+		if (((*list_a)->nb % div) >= (div / 2))
+			pb(list_a, list_b);
+		ra(list_a);
 		u++;
 	}
 }
@@ -103,17 +102,21 @@ void	radix(t_int_list **list_a)
 	t_int_list	*lista;
 	t_int_list	*listb;
 	int			size;
+	int			test;
 
+	test = 0;
 	add_binary(list_a);
 	lista = *list_a;
 	size = ft_lstintsize(lista);
 	listb = NULL;
 	divide_bin = 2;
-	while (!is_sorted(lista))
+	while (test != 3)
 	{
 		push_bin(&lista, &listb, size, divide_bin);
+		//test(listb);
 		while (listb)
-			pa(&lista, &listb);
+			pa(list_a, &listb);
 		divide_bin *= 10;
+		test++;
 	}
 }
