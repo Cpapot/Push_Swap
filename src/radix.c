@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:23:58 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/16 16:37:06 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/17 14:12:12 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,27 +96,40 @@ void	push_bin(t_int_list **list_a, t_int_list **list_b, int llen, int div)
 	}
 }
 
+int	find_max(t_int_list **list_a)
+{
+	int			tmp;
+	t_int_list	*list;
+
+	list = *list_a;
+	tmp = list->cont;
+	while (list)
+	{
+		if (list->cont > tmp)
+			tmp = list->cont;
+		list = list->next;
+	}
+	return (tmp);
+}
+
 void	radix(t_int_list **list_a)
 {
 	int			divide_bin;
 	t_int_list	*lista;
 	t_int_list	*listb;
 	int			size;
-	int			test;
 
-	test = 0;
 	add_binary(list_a);
 	lista = *list_a;
 	size = ft_lstintsize(lista);
 	listb = NULL;
 	divide_bin = 2;
-	while (test != 3)
+	while (!is_sorted(*list_a))
 	{
 		push_bin(&lista, &listb, size, divide_bin);
-		//test(listb);
 		while (listb)
 			pa(list_a, &listb);
+		if (ft_bin_size(find_max(list_a)))
 		divide_bin *= 10;
-		test++;
 	}
 }
