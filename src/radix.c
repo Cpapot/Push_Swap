@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:23:58 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/17 14:12:12 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/12/19 20:10:02 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void	add_binary(t_int_list **list_a)
 	}
 }
 
-//erreur push bin
 void	push_bin(t_int_list **list_a, t_int_list **list_b, int llen, int div)
 {
 	int			u;
@@ -91,7 +90,8 @@ void	push_bin(t_int_list **list_a, t_int_list **list_b, int llen, int div)
 	{
 		if (((*list_a)->nb % div) >= (div / 2))
 			pb(list_a, list_b);
-		ra(list_a);
+		else
+			ra(list_a);
 		u++;
 	}
 }
@@ -102,11 +102,11 @@ int	find_max(t_int_list **list_a)
 	t_int_list	*list;
 
 	list = *list_a;
-	tmp = list->cont;
+	tmp = list->nb;
 	while (list)
 	{
-		if (list->cont > tmp)
-			tmp = list->cont;
+		if (list->nb > tmp)
+			tmp = list->nb;
 		list = list->next;
 	}
 	return (tmp);
@@ -118,18 +118,23 @@ void	radix(t_int_list **list_a)
 	t_int_list	*lista;
 	t_int_list	*listb;
 	int			size;
+	int			max;
 
 	add_binary(list_a);
 	lista = *list_a;
 	size = ft_lstintsize(lista);
 	listb = NULL;
 	divide_bin = 2;
-	while (!is_sorted(*list_a))
+	max = find_max(list_a);
+	while (max % divide_bin <= (divide_bin / 2))
 	{
 		push_bin(&lista, &listb, size, divide_bin);
 		while (listb)
+		{
 			pa(list_a, &listb);
-		if (ft_bin_size(find_max(list_a)))
+			//test(*list_a);
+		}
 		divide_bin *= 10;
+		//test(*list_a);
 	}
 }
