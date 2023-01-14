@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:03:10 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/13 16:46:29 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/14 16:30:24 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,11 @@ void	rr(t_int_list **list_a, t_int_list **list_b);
 void	rrb(t_int_list **list_b);
 void	rra(t_int_list **list_a);
 void	rrr(t_int_list **list_a, t_int_list **list_b);
+
+/*					median						*/
+int		find_median_in_array(int *int_array, int size, int median_pos);
+int		median_pos(int size);
+int		find_median(int size, t_int_list **list_a);
 
 /*					sort						*/
 void	sort(t_int_list **list_a);
