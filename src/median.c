@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 16:29:05 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/14 16:32:21 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/14 21:02:28 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int	find_median(int size, t_int_list **list_a)
 	int			*int_array;
 	int			result;
 
+	i = 0;
 	med_pos = median_pos(size);
 	int_array = malloc(sizeof(int) * (size + 1));
 	if (int_array == NULL)

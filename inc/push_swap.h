@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:03:10 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/14 16:30:24 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/14 21:33:28 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "../libft/includes/libft.h"
 
 # define INT_MAX	2147483647
+# define INT_MIN	-2147483647 - 1
 
 /*					push_swap					*/
 int		is_sorted(t_int_list *list);
