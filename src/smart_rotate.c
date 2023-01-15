@@ -6,58 +6,46 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 01:50:49 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/15 17:07:01 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/15 23:08:46 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int		rb_or_rrb(int size, int max_pos, int min_pos)
+t_info		rb_or_rrb(int size, int max, int min)
 {
-	if ((max_pos - 1 <= size - (max_pos- 1) || min_pos - 1 <= size - (min_pos - 1))
-		&& (max_pos - 1 <= size - (min_pos - 1) || min_pos - 1 <= size - (max_pos - 1)))
+	t_info	info;
+	int		rb_count;
+	int		rrb_count;
+
+	if (size - (min - 1) <= size - (max - 1))
+		rrb_count = size - (min - 1);
+	else
+		rrb_count = size - (max - 1);
+	if (min - 1 <= max - 1)
+		rb_count = min - 1;
+	else
+		rb_count = max - 1;
+	if (rb_count <= rrb_count)
 	{
-		return (1);
+		info.nb = 1;
+		info.rota = rb_count;
 	}
 	else
 	{
-		return (0);
+		info.rota = rrb_count;
+		info.nb = 0;
 	}
-}
-
-int		near_min_or_max(int size, int max_pos, int min_pos)
-{
-	int	pos;
-
-	if (rb_or_rrb(size, max_pos, min_pos))
-	{
-		if ((min_pos - 1) <= (max_pos - 1))
-			pos = min_pos;
-		else
-			pos = max_pos;
-		return (pos - 1);
-	}
-	else
-	{
-		if ((size - (min_pos - 1)) <= (size - (max_pos - 1)))
-			pos = min_pos;
-		else
-			pos = max_pos;
-		return (size - (pos - 1));
-	}
+	return (info);
 }
 
 void	smart_rotate(t_int_list **list_b, int size, int max, int min)
 {
-	int		rotation;
+	t_info	info;
 
-	rotation = near_min_or_max(size, max, min);
-	if (rb_or_rrb(size, max, max))
-	{
-		rb_to_push(list_b, rotation);
-	}
+	info = rb_or_rrb(size, max, min);
+	if (info.nb == 1)
+		rb_to_push(list_b, info.rota);
 	else
-	{
-		rrb_to_push(list_b, rotation);
-	}
+		rrb_to_push(list_b, info.rota);
 }

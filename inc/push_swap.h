@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:03:10 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/15 17:00:22 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/15 23:03:41 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@
 
 # define INT_MAX	2147483647
 # define INT_MIN	-2147483647 - 1
+
+
+typedef struct s_info
+{
+	int					nb;
+	int					rota;
+}					t_info;
 
 /*					push_swap					*/
 int		is_sorted(t_int_list *list);
