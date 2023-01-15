@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 13:41:41 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/14 19:48:43 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/15 01:09:27 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,16 @@ void	rr(t_int_list **list_a, t_int_list **list_b)
 	rotate(list_b);
 	ft_printf("rr\n");
 	return ;
+}
+
+void	rb_to_push(t_int_list **list_b, int rotation)
+{
+	int		i;
+
+	i = 0;
+	while (i != rotation)
+	{
+		rb(list_b);
+		i++;
+	}
 }
