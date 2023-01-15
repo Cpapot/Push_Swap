@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 16:29:05 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/14 21:02:28 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/15 17:59:10 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	find_median_in_array(int *int_array, int size, int median_pos)
 
 int	median_pos(int size)
 {
-	int			median_pos;
+	int		median_pos;
 
 	if (size % 2 == 1)
 		median_pos = (size + 1) / 2;

@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:03:10 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/15 01:55:57 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/15 17:00:22 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,14 @@ int		find_median_in_array(int *int_array, int size, int median_pos);
 int		median_pos(int size);
 int		find_median(int size, t_int_list **list_a);
 
-/*					find min & max				*/
+/*					find min max				*/
 int		max_pos(t_int_list **list);
 int		min_pos(t_int_list **list);
 int		find_max(t_int_list **list);
 int		find_min(t_int_list **list);
 
 /*					smart_rotate				*/
-void	smart_rotate(t_int_list list_b, int size, int max, int min);
+void	smart_rotate(t_int_list **list_b, int size, int max, int min);
 
 /*					sort						*/
 void	sort(t_int_list **list_a);
