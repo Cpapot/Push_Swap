@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 16:27:18 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/15 23:23:06 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/16 17:51:21 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ void	smart_push(t_int_list **list_a, t_int_list **list_b, int size)
 	}
 }
 
-void	smart_push_and_rotate(t_int_list **list_b, t_int_list **list_a, int size)
+void	smart_push_and_rotate(t_int_list **list_b, t_int_list **list_a, int s)
 {
 	int	tmp;
 
 	while (*list_b)
 	{
-		smart_push(list_a, list_b, size);
+		smart_push(list_a, list_b, s);
 		tmp = (*list_a)->cont;
 		if ((*list_a)->cont < find_min(list_b))
 		{
@@ -43,37 +43,37 @@ void	smart_push_and_rotate(t_int_list **list_b, t_int_list **list_a, int size)
 	}
 }
 
-void	push_min_half(t_int_list **list_a, t_int_list **list_b, int median_nbr, int size)
+void	push_min_half(t_int_list **li_a, t_int_list **li_b, int median, int s)
 {
 	int			i;
 
 	i = 0;
-	while (i != median_pos(size))
+	while (i != median_pos(s))
 	{
-		while ((* list_a)->cont > median_nbr)
-			ra(list_a);
-		pb(list_a, list_b);
+		while ((*li_a)->cont > median)
+			ra(li_a);
+		pb(li_a, li_b);
 		i++;
 	}
-	smart_push_and_rotate(list_b, list_a, median_pos(size));
+	smart_push_and_rotate(li_b, li_a, median_pos(s));
 }
 
-void	push_max_half(t_int_list **list_a, t_int_list **list_b, int median_nbr, int size)
+void	push_max_half(t_int_list **li_a, t_int_list **li_b, int median, int s)
 {
 	int			i;
 
 	i = 0;
-	while (i != size - median_pos(size))
+	while (i != s - median_pos(s))
 	{
-		while ((* list_a)->cont <= median_nbr)
-			ra(list_a);
-		pb(list_a, list_b);
+		while ((*li_a)->cont <= median)
+			ra(li_a);
+		pb(li_a, li_b);
 		i++;
 	}
-	smart_push_and_rotate(list_b, list_a, size - median_pos(size));
+	smart_push_and_rotate(li_b, li_a, s - median_pos(s));
 }
 
-void	sort(t_int_list **list_a)
+void	sort_median(t_int_list **list_a)
 {
 	int			median_nbr;
 	int			size;

@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:03:10 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/15 23:03:41 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/16 18:04:39 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
 # include "../libft/includes/libft.h"
 
 # define INT_MAX	2147483647
-# define INT_MIN	-2147483647 - 1
-
+# define INT_MIN	-2147483647
 
 typedef struct s_info
 {
@@ -80,6 +79,8 @@ int		find_min(t_int_list **list);
 void	smart_rotate(t_int_list **list_b, int size, int max, int min);
 
 /*					sort						*/
-void	sort(t_int_list **list_a);
+void	sort_median(t_int_list **list_a);
+
+/*					sort_quarter				*/
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 01:50:49 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/15 23:08:46 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/16 17:49:55 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-t_info		rb_or_rrb(int size, int max, int min)
+t_info	rb_or_rrb(int size, int max, int min)
 {
 	t_info	info;
 	int		rb_count;
@@ -26,7 +26,7 @@ t_info		rb_or_rrb(int size, int max, int min)
 		rb_count = min - 1;
 	else
 		rb_count = max - 1;
-	if (rb_count <= rrb_count)
+	if (1/*rb_count <= rrb_count*/)
 	{
 		info.nb = 1;
 		info.rota = rb_count;
