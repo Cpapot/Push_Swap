@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 15:43:48 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/16 17:55:20 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/16 21:53:16 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ void	call_sorter(t_int_list **list_a)
 		sort_five_nbr(&list);
 	else if (len <= 100)
 		sort_median(&list);
-	//else
+	else
+		sort_quarter(&list, len);
 }

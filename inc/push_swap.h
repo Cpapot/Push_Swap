@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:03:10 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/16 18:04:39 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/16 22:24:06 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ typedef struct s_info
 {
 	int					nb;
 	int					rota;
+	int					quart_size;
+	int					quart_max;
+	int					quart_min;
 }					t_info;
 
 /*					push_swap					*/
@@ -78,9 +81,14 @@ int		find_min(t_int_list **list);
 /*					smart_rotate				*/
 void	smart_rotate(t_int_list **list_b, int size, int max, int min);
 
-/*					sort						*/
+/*					sort median						*/
 void	sort_median(t_int_list **list_a);
 
+/*					sort						*/
+void	smart_push_and_rotate(t_int_list **list_b, t_int_list **list_a, int s);
+void	smart_push(t_int_list **list_a, t_int_list **list_b, int size);
+
 /*					sort_quarter				*/
+void	sort_quarter(t_int_list	**list_a, int size);
 
 #endif

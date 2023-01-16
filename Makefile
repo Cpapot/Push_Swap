@@ -12,7 +12,8 @@ SRCSFILE		=	push_swap.c check_error.c \
 					swap.c push.c rotate.c \
 					reverse_rotate.c sort_five.c \
 					sort.c median.c find_min_max.c \
-					smart_rotate.c
+					smart_rotate.c sort_median.c \
+					sort_quarter.c
 
 LIBFTSRC	=	libftprintf.a libft.a
 
