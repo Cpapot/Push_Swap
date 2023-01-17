@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 01:50:49 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/16 17:49:55 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/17 20:15:16 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,12 @@ t_info	rb_or_rrb(int size, int max, int min)
 		rb_count = min - 1;
 	else
 		rb_count = max - 1;
-	if (1/*rb_count <= rrb_count*/)
+	if (rb_count <= rrb_count)
 	{
 		info.nb = 1;
-		info.rota = rb_count;
 	}
 	else
 	{
-		info.rota = rrb_count;
 		info.nb = 0;
 	}
 	return (info);
@@ -45,7 +43,9 @@ void	smart_rotate(t_int_list **list_b, int size, int max, int min)
 
 	info = rb_or_rrb(size, max, min);
 	if (info.nb == 1)
-		rb_to_push(list_b, info.rota);
+		while ((*list_b)->cont != find_min(list_b) && (*list_b)->cont != find_max(list_b))
+			rb(list_b);
 	else
-		rrb_to_push(list_b, info.rota);
+		while ((*list_b)->cont != find_min(list_b) && (*list_b)->cont != find_max(list_b))
+			rrb(list_b);
 }
