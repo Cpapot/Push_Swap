@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 01:13:18 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/15 18:30:28 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/17 01:42:20 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,24 @@ int	find_min(t_int_list **list)
 	while (tmplist != NULL)
 	{
 		if (tmplist->cont <= tmp)
+		{
+			tmp = tmplist->cont;
+		}
+		tmplist = tmplist->next;
+	}
+	return (tmp);
+}
+
+int	find_min_superior_at(int a, t_int_list **list)
+{
+	int			tmp;
+	t_int_list	*tmplist;
+
+	tmp = INT_MAX;
+	tmplist = *list;
+	while (tmplist != NULL)
+	{
+		if (tmplist->cont <= tmp && tmplist->cont > a)
 		{
 			tmp = tmplist->cont;
 		}
