@@ -44,6 +44,8 @@ OBJS		=	$(SRCS:$(SRCSDIR)%.c=$(OBJSDIR)%.o)
 #		    \  / (_| | |  | | (_| | |_) | |  __/\__ \.
 #		     \/ \__,_|_|  |_|\__,_|_.__/|_|\___||___/
 
+PRINT_COMPILE = @echo "\033[1;32m⏳ compiling push_swap\033[1;0m"
+
 AR			=	ar rc
 
 NAME		=	push_swap
@@ -63,29 +65,33 @@ MKDIR		=	mkdir -p
 #				 | | \ \ |_| | |  __/\__ \.
 #				 |_|  \_\__,_|_|\___||___/
 
-all : ${NAME}
+all : lib ${NAME}
+	@echo "\033[1;32m✅ push_swap OK\033[1;0m"
 
 ${NAME}:	${OBJS} Makefile
-	${MAKE} lib
-	${CC} ${OBJS} ${LIBFT} -o ${NAME}
+	@${CC} ${OBJS} ${LIBFT} -o ${NAME}
 
 $(OBJSDIR)%.o: ${SRCSDIR}%.c ${HEAD}
-	$(CC) ${CFLAGS} -c $< -o $@ -I$(HEADERSDIR)
+	@$(CC) ${CFLAGS} -c $< -o $@ -I$(HEADERSDIR)
+	@$(PRINT_COMPILE)
+	@$(eval PRINT_COMPILE = @:)
 
 clean:
-	${MAKE} clean -C ${LIBFTDIR}
-	${RM} ${OBJS}
+	@${MAKE} clean --no-print-directory -C ${LIBFTDIR}
+	@${RM} ${OBJS}
+	@echo "\033[1;31m🗑  push_swap cleaned\033[1;0m"
 
 fclean:
-	${RM} ${OBJS}
-	${RM} ${NAME}
-	${MAKE} fclean -C ${LIBFTDIR}
+	@${RM} ${OBJS}
+	@${RM} ${NAME}
+	@${MAKE} --no-print-directory fclean -C ${LIBFTDIR}
+	@echo "\033[1;31m🗑  push_swap cleaned\033[1;0m"
 
 re:
-	${MAKE} fclean
-	${MAKE} all
+	@${MAKE} --no-print-directory fclean
+	@${MAKE} --no-print-directory all
 
 lib:
-	${MAKE}	-C ${LIBFTDIR}
+	@${MAKE}	--no-print-directory -C ${LIBFTDIR}
 
 .PHONY : re all clean fclean printf lib

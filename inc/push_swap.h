@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:03:10 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/17 00:49:26 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/17 17:57:03 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int		is_sorted(t_int_list *list);
 /*					check_error					*/
 void	print_error(t_int_list *list);
 int		check_args(int argc, char **argv);
+int		check_args_no_space(int argc, char **argv);
 int		check_duplicate(t_int_list *list);
 
 /*					call_sorter					*/

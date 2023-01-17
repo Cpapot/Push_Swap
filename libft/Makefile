@@ -84,6 +84,8 @@ OBJS		=	$(SRCS:.c=.o)
 #		    \  / (_| | |  | | (_| | |_) | |  __/\__ \.
 #		     \/ \__,_|_|  |_|\__,_|_.__/|_|\___||___/
 
+PRINT_COMPILE = @echo "\033[1;32m⏳ compiling libft\033[1;0m"
+
 AR			=	ar rcs
 
 NAME		=	libft.a
@@ -103,28 +105,33 @@ MKDIR		=	mkdir -p
 #				 | | \ \ |_| | |  __/\__ \.
 #				 |_|  \_\__,_|_|\___||___/
 
-%.o: %.c ${HEADER} Makefile
-	$(CC) -I ${CFLAGS} -c $< -o $@
+%.o: %.c ${HEADER}
+	$(PRINT_COMPILE)
+	@$(CC) -I ${CFLAGS} -c $< -o $@
+	@$(eval PRINT_COMPILE = @:)
 
 all : ${NAME} printf
 
-${NAME}:	${OBJS}
-	${AR} ${NAME} ${OBJS}
+${NAME}: ${OBJS}
+	@${AR} ${NAME} ${OBJS}
+	@echo "\033[1;32m✅ libft OK\033[1;0m"
 
 clean:
-	${MAKE} clean -C ${PRINTF}
-	${RM} ${OBJS}
+	@${MAKE} clean -C ${PRINTF}
+	@echo "\033[1;31m🗑  printf cleaned\033[1;0m"
+	@${RM} ${OBJS}
+	@echo "\033[1;31m🗑  libft cleaned\033[1;0m"
 
 fclean:
-	${MAKE} clean
-	${RM} ${NAME}
-	${MAKE} fclean -C ${PRINTF}
+	@${MAKE} --no-print-directory clean
+	@${RM} ${NAME}
+	@${MAKE} --no-print-directory fclean -C ${PRINTF}
 
 re:
-	${MAKE} fclean
-	${MAKE} all
+	@${MAKE} --no-print-directory fclean
+	@${MAKE} --no-print-directory all
 
 printf: ${PRINTF}
-	${MAKE} -C ${PRINTF}
+	@${MAKE} -s -C ${PRINTF}
 
 .PHONY : re all clean fclean printf
