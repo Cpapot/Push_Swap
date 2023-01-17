@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 22:29:50 by cpapot            #+#    #+#             */
-/*   Updated: 2022/12/14 14:27:26 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/17 20:40:27 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	check_args(int argc, char **argv)
 		u = 0;
 		while (argv[i][u])
 		{
-			if (!ft_isdigit(argv[i][u]) && argv[i][u] != '-')
+			if (!ft_isdigit(argv[i][u]) && argv[i][u] != '-' && argv[i][u] != ' ')
 				return (0);
 			u++;
 		}

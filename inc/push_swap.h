@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:03:10 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/17 17:57:03 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/17 20:30:10 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int		is_sorted(t_int_list *list);
 /*					check_error					*/
 void	print_error(t_int_list *list);
 int		check_args(int argc, char **argv);
-int		check_args_no_space(int argc, char **argv);
 int		check_duplicate(t_int_list *list);
 
 /*					call_sorter					*/
@@ -60,13 +59,11 @@ void	pa(t_int_list **list_a, t_int_list **list_b);
 void	rb(t_int_list **list_b);
 void	ra(t_int_list **list_a);
 void	rr(t_int_list **list_a, t_int_list **list_b);
-void	rb_to_push(t_int_list **list_b, int rotation);
 
 /*					reverse rotate				*/
 void	rrb(t_int_list **list_b);
 void	rra(t_int_list **list_a);
 void	rrr(t_int_list **list_a, t_int_list **list_b);
-void	rrb_to_push(t_int_list **list_b, int rotation);
 
 /*					median						*/
 int		find_median_in_array(int *int_array, int size, int median_pos);
