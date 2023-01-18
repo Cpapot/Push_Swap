@@ -6,13 +6,13 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 13:41:41 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/15 17:05:25 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/18 14:39:51 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	rotate(t_int_list **list)
+static void	rotate(t_int_list **list)
 {
 	t_int_list	tmp;
 	t_int_list	*lista;

@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:03:10 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/17 20:30:10 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/18 17:57:20 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 
 # define INT_MAX	2147483647
 # define INT_MIN	-2147483647
+# define LLONG_MAX	9223372036854775807
+# define LLONG_MIN	-9223372036854775807
 
 typedef struct s_info
 {
@@ -36,6 +38,7 @@ int		is_sorted(t_int_list *list);
 void	print_error(t_int_list *list);
 int		check_args(int argc, char **argv);
 int		check_duplicate(t_int_list *list);
+char	*check_splitted_numbers(char *str);
 
 /*					call_sorter					*/
 void	call_sorter(t_int_list **list_a);
@@ -75,7 +78,7 @@ int		max_pos(t_int_list **list);
 int		min_pos(t_int_list **list);
 int		find_max(t_int_list **list);
 int		find_min(t_int_list **list);
-int	find_min_superior_at(int a, t_int_list **list);
+int		find_min_superior_at(int a, t_int_list **list);
 
 /*					smart_rotate				*/
 void	smart_rotate(t_int_list **list_b, int size, int max, int min);

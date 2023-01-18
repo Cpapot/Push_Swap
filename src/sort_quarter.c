@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 17:56:40 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/17 01:46:44 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/18 14:05:53 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,17 +60,18 @@ t_info	quarter_info(t_int_list **list_a, int index, int size)
 	return (info);
 }
 
-void	push_quarter(t_int_list **list_a, t_int_list **list_b, int size, int index)
+void	push_quarter(t_int_list **list_a, t_int_list **list_b, int s, int ind)
 {
 	int			i;
 	int			min;
 	t_info		info;
 
-	info = quarter_info(list_a, index, size);
+	info = quarter_info(list_a, ind, s);
 	i = 0;
 	while (i != info.quart_size)
 	{
-		while ((*list_a)->cont > info.quart_max || (*list_a)->cont < info.quart_min)
+		while ((*list_a)->cont > info.quart_max
+			|| (*list_a)->cont < info.quart_min)
 			ra(list_a);
 		pb(list_a, list_b);
 		i++;
@@ -78,7 +79,7 @@ void	push_quarter(t_int_list **list_a, t_int_list **list_b, int size, int index)
 	min = min_pos(list_a);
 	while ((*list_a)->cont != find_min(list_a))
 	{
-		if (min <= median_pos(size))
+		if (min <= median_pos(s))
 			ra(list_a);
 		else
 			rra(list_a);

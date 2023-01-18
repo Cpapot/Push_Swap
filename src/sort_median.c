@@ -6,12 +6,13 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 20:27:42 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/16 20:31:16 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/18 14:06:13 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-static void	push_min_half(t_int_list **li_a, t_int_list **li_b, int median, int s)
+
+void	push_min_half(t_int_list **li_a, t_int_list **li_b, int median, int s)
 {
 	int			i;
 
@@ -26,7 +27,7 @@ static void	push_min_half(t_int_list **li_a, t_int_list **li_b, int median, int 
 	smart_push_and_rotate(li_b, li_a, median_pos(s));
 }
 
-static void	push_max_half(t_int_list **li_a, t_int_list **li_b, int median, int s)
+void	push_max_half(t_int_list **li_a, t_int_list **li_b, int median, int s)
 {
 	int			i;
 

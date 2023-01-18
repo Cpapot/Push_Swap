@@ -6,19 +6,19 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 23:35:16 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/15 22:52:37 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/18 14:40:37 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void reverse_rotate(t_int_list **list)
+static void	reverse_rotate(t_int_list **list)
 {
-	t_int_list *listtmp;
-	t_int_list *start;
-	t_int_list temp;
-	int tmp;
-	int bintmp;
+	t_int_list	*listtmp;
+	t_int_list	*start;
+	t_int_list	temp;
+	int			tmp;
+	int			bintmp;
 
 	tmp = 0;
 	start = *list;
@@ -36,30 +36,28 @@ void reverse_rotate(t_int_list **list)
 	start->cont = tmp;
 }
 
-void rra(t_int_list **list_a)
+void	rra(t_int_list **list_a)
 {
 	reverse_rotate(list_a);
 	ft_printf("rra\n");
-	return;
 }
 
-void rrb(t_int_list **list_b)
+void	rrb(t_int_list **list_b)
 {
 	reverse_rotate(list_b);
 	ft_printf("rrb\n");
-	return;
 }
 
-void rrr(t_int_list **list_a, t_int_list **list_b)
+void	rrr(t_int_list **list_a, t_int_list **list_b)
 {
 	reverse_rotate(list_a);
 	reverse_rotate(list_b);
 	ft_printf("rrr\n");
 }
 
-void rrb_to_push(t_int_list **list_b, int rotation)
+void	rrb_to_push(t_int_list **list_b, int rotation)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i != rotation)

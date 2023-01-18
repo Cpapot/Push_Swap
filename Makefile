@@ -72,6 +72,7 @@ ${NAME}:	${OBJS} Makefile
 	@${CC} ${OBJS} ${LIBFT} -o ${NAME}
 
 $(OBJSDIR)%.o: ${SRCSDIR}%.c ${HEAD}
+	@$(MKDIR) $(OBJSDIR)
 	@$(CC) ${CFLAGS} -c $< -o $@ -I$(HEADERSDIR)
 	@$(PRINT_COMPILE)
 	@$(eval PRINT_COMPILE = @:)
@@ -83,6 +84,7 @@ clean:
 
 fclean:
 	@${RM} ${OBJS}
+	@${RM} ${OBJSDIR}
 	@${RM} ${NAME}
 	@${MAKE} --no-print-directory fclean -C ${LIBFTDIR}
 	@echo "\033[1;31m🗑  push_swap cleaned\033[1;0m"
