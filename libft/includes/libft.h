@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:20:49 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/17 16:54:38 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/19 16:05:07 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@
 # include <unistd.h>
 # include <stdint.h>
 
-#define RESET              "\x1b[0m"
-#define BLACK              "\x1b[30m"
-#define RED                "\x1b[31m"
-#define GREEN              "\x1b[32m"
-#define YELLOW             "\x1b[33m"
-#define BLUE               "\x1b[34m"
-#define MAGENTA            "\x1b[35m"
-#define CYAN               "\x1b[36m"
-#define WHITE              "\x1b[37m"
+# define RESET              "\x1b[0m"
+# define BLACK              "\x1b[30m"
+# define RED                "\x1b[31m"
+# define GREEN              "\x1b[32m"
+# define YELLOW             "\x1b[33m"
+# define BLUE               "\x1b[34m"
+# define MAGENTA            "\x1b[35m"
+# define CYAN               "\x1b[36m"
+# define WHITE              "\x1b[37m"
 
 typedef struct s_intlist
 {

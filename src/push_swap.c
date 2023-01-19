@@ -6,40 +6,11 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 19:04:56 by cpapot            #+#    #+#             */
-/*   Updated: 2023/01/18 17:59:34 by cpapot           ###   ########.fr       */
+/*   Updated: 2023/01/19 15:58:20 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-
-long long	ft_atoll(const char *str)
-{
-	long long	result;
-	long long	tmp;
-	char		is_negative;
-
-	while (*str == '\t' || *str == '\n' || *str == '\v' || *str == '\f'
-		|| *str == '\r' || *str == ' ')
-		str++;
-	is_negative = *str == '-';
-	if (*str == '+' || *str == '-')
-		str++;
-	result = 0;
-	while (*str >= '0' && *str <= '9')
-	{
-		tmp = result * 10 + *str++ - '0';
-		if (tmp < result)
-		{
-			if (is_negative)
-				return (LLONG_MIN);
-			return (LLONG_MAX);
-		}
-		result = tmp;
-	}
-	if (is_negative)
-		return (-result);
-	return (result);
-}
 
 int	is_sorted(t_int_list *list)
 {
@@ -126,7 +97,7 @@ int	main(int argc, char **argv)
 		while (split[i])
 			i++;
 		intlist_a = read_args_split(i, split);
-		free(split);
+		free_split(split);
 	}
 	else
 		intlist_a = read_args(argc, argv);
